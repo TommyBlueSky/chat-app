@@ -1,0 +1,31 @@
+/* src/App.css */
+.App {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.chat-window {
+  border: 1px solid #ccc;
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.bubble {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
