@@ -11,7 +11,7 @@ const App = () => {
 
     const fetchMessages = async () => {
         const response = await axios.get('http://localhost:5000/messages');
-        setMessages(response.data);
+        setMessages(response.data.reverse());
     };
 
     useEffect(() => {
