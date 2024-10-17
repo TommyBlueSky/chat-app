@@ -8,7 +8,7 @@ const App = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/messages`);
+            const response = await fetch(`https://bluesky-chat-app-4df6d3aad62b.herokuapp.com/messages`);
             const data = await response.json();
             setMessages(data.reverse());
         } catch (error) {
@@ -28,7 +28,7 @@ const App = () => {
     const handleSendMessage = async (msg) => {
         try {
             if (editingMessage) {
-                await fetch(`http://localhost:5000/messages/${msg.id}`, {
+                await fetch(`https://bluesky-chat-app-4df6d3aad62b.herokuapp.com/messages/${msg.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const App = () => {
                 });
                 setEditingMessage(null);
             } else {
-                await fetch(`http://localhost:5000/messages`, {
+                await fetch(`https://bluesky-chat-app-4df6d3aad62b.herokuapp.com/messages`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const App = () => {
     const handleDeleteMessage = async (id) => {
         try {
             console.log('Deleting message with ID:', id);
-            await fetch(`http://localhost:5000/messages/${id}`, {
+            await fetch(`https://bluesky-chat-app-4df6d3aad62b.herokuapp.com/messages/${id}`, {
                 method: 'DELETE',
             });
             fetchMessages();
